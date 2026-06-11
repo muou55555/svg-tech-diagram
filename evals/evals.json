@@ -1,0 +1,26 @@
+{
+  "skill_name": "svg-tech-diagram",
+  "evals": [
+    {
+      "id": 0,
+      "eval_name": "ascii-to-image",
+      "prompt": "我笔记里有个 ASCII 架构图，帮我转成一张清晰好看的图片（PNG），中文标注保留：API 网关在顶层，下面分出订单服务和用户服务两个微服务，两者共同连接底部的 MySQL 数据库",
+      "expected_output": "一张 PNG 图片（含 SVG 源文件），微服务架构，中文正确渲染无方框，布局整齐有箭头",
+      "files": []
+    },
+    {
+      "id": 1,
+      "eval_name": "rag-pipeline-diagram",
+      "prompt": "画一张 RAG（检索增强生成）系统的流程图图片，中文标注，流程：用户提问→向量化→检索知识库→拼接上下文→LLM生成回答。要插到 PPT 里用，要清晰。",
+      "expected_output": "一张高清 PNG 流程图，5 个步骤排列、箭头连接，中文无方框",
+      "files": []
+    },
+    {
+      "id": 2,
+      "eval_name": "layered-arch-diagram",
+      "prompt": "给我生成一张前后端分离 Web 应用的分层架构图 PNG：表现层（React 前端）、服务层（Spring Boot API）、数据层（MySQL + Redis），每层里标注主要组件，中文。",
+      "expected_output": "一张分层架构图 PNG，三个水平层堆叠，层内有组件小盒，中文正确渲染",
+      "files": []
+    }
+  ]
+}
