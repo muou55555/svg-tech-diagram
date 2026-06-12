@@ -1,0 +1,109 @@
+<svg width="1200" height="510" viewBox="0 0 1200 510" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Noto Sans SC Thin','Noto Sans SC',sans-serif; }
+    .title { font-size: 26px; font-weight: 700; fill: #1e293b; }
+    .subtitle { font-size: 14px; fill: #64748b; }
+    .h2 { font-size: 19px; font-weight: 700; fill: #1e293b; }
+    .sub { font-size: 13px; fill: #64748b; }
+    .badge { font-size: 15px; font-weight: 700; fill: #ffffff; }
+    .note { font-size: 13px; fill: #64748b; }
+    .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+  </style>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="1200" height="510" fill="#f8fafc"/>
+
+  <!-- 标题 -->
+  <text class="title" x="600" y="46" text-anchor="middle">RAG 检索增强生成流程</text>
+  <text class="subtitle" x="600" y="74" text-anchor="middle">Retrieval-Augmented Generation Pipeline</text>
+
+  <!-- ===== 步骤卡片（5 个，宽180 高115，y=120，间距50） ===== -->
+  <!-- 卡片 1：用户提问 -->
+  <rect class="card" x="50" y="120" width="180" height="115" rx="12"/>
+  <rect x="50" y="120" width="180" height="8" rx="4" fill="#0ea5e9"/>
+  <text class="h2" x="140" y="168" text-anchor="middle">用户提问</text>
+  <text class="sub" x="140" y="196" text-anchor="middle">输入自然语言问题</text>
+  <text class="sub" x="140" y="216" text-anchor="middle">Query</text>
+
+  <!-- 卡片 2：向量化 -->
+  <rect class="card" x="280" y="120" width="180" height="115" rx="12"/>
+  <rect x="280" y="120" width="180" height="8" rx="4" fill="#10b981"/>
+  <text class="h2" x="370" y="168" text-anchor="middle">向量化</text>
+  <text class="sub" x="370" y="196" text-anchor="middle">Embedding 模型</text>
+  <text class="sub" x="370" y="216" text-anchor="middle">文本转高维向量</text>
+
+  <!-- 卡片 3：检索知识库 -->
+  <rect class="card" x="510" y="120" width="180" height="115" rx="12"/>
+  <rect x="510" y="120" width="180" height="8" rx="4" fill="#f59e0b"/>
+  <text class="h2" x="600" y="168" text-anchor="middle">检索知识库</text>
+  <text class="sub" x="600" y="196" text-anchor="middle">向量相似度匹配</text>
+  <text class="sub" x="600" y="216" text-anchor="middle">召回 Top-K 片段</text>
+
+  <!-- 卡片 4：拼接上下文 -->
+  <rect class="card" x="740" y="120" width="180" height="115" rx="12"/>
+  <rect x="740" y="120" width="180" height="8" rx="4" fill="#8b5cf6"/>
+  <text class="h2" x="830" y="168" text-anchor="middle">拼接上下文</text>
+  <text class="sub" x="830" y="196" text-anchor="middle">问题 + 检索结果</text>
+  <text class="sub" x="830" y="216" text-anchor="middle">组装 Prompt</text>
+
+  <!-- 卡片 5：LLM 生成回答（高亮主角） -->
+  <rect x="970" y="120" width="180" height="115" rx="12" fill="#fff7ed" stroke="#da7756" stroke-width="2.5"/>
+  <rect x="970" y="120" width="180" height="8" rx="4" fill="#da7756"/>
+  <text class="h2" x="1060" y="168" text-anchor="middle">LLM 生成回答</text>
+  <text class="sub" x="1060" y="196" text-anchor="middle">大模型基于上下文</text>
+  <text class="sub" x="1060" y="216" text-anchor="middle">生成准确回答</text>
+
+  <!-- 步骤序号徽章 -->
+  <circle cx="140" cy="120" r="15" fill="#0ea5e9" stroke="#ffffff" stroke-width="2"/>
+  <text class="badge" x="140" y="126" text-anchor="middle">1</text>
+  <circle cx="370" cy="120" r="15" fill="#10b981" stroke="#ffffff" stroke-width="2"/>
+  <text class="badge" x="370" y="126" text-anchor="middle">2</text>
+  <circle cx="600" cy="120" r="15" fill="#f59e0b" stroke="#ffffff" stroke-width="2"/>
+  <text class="badge" x="600" y="126" text-anchor="middle">3</text>
+  <circle cx="830" cy="120" r="15" fill="#8b5cf6" stroke="#ffffff" stroke-width="2"/>
+  <text class="badge" x="830" y="126" text-anchor="middle">4</text>
+  <circle cx="1060" cy="120" r="15" fill="#da7756" stroke="#ffffff" stroke-width="2"/>
+  <text class="badge" x="1060" y="126" text-anchor="middle">5</text>
+
+  <!-- 横向箭头 -->
+  <line x1="236" y1="178" x2="274" y2="178" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="466" y1="178" x2="504" y2="178" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="696" y1="178" x2="734" y2="178" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="926" y1="178" x2="964" y2="178" stroke="#475569" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== 向量知识库（圆柱体，中心 x=600） ===== -->
+  <rect x="490" y="325" width="220" height="100" fill="#eff6ff" stroke="none"/>
+  <line x1="490" y1="325" x2="490" y2="425" stroke="#3b82f6" stroke-width="1.5"/>
+  <line x1="710" y1="325" x2="710" y2="425" stroke="#3b82f6" stroke-width="1.5"/>
+  <ellipse cx="600" cy="425" rx="110" ry="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <ellipse cx="600" cy="325" rx="110" ry="16" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="600" y="382" text-anchor="middle" font-size="17" font-weight="700" fill="#1e293b">向量知识库</text>
+  <text x="600" y="406" text-anchor="middle" font-size="12" fill="#64748b">Vector Database</text>
+
+  <!-- 卡片3 与 知识库 之间的双向箭头 -->
+  <line x1="565" y1="241" x2="565" y2="303" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="635" y1="303" x2="635" y2="241" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <text class="note" x="553" y="277" text-anchor="end">相似度检索</text>
+  <text class="note" x="647" y="277" text-anchor="start">Top-K 相关片段</text>
+
+  <!-- ===== 离线索引（左下，虚线） ===== -->
+  <rect x="90" y="340" width="160" height="75" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="170" y="372" text-anchor="middle" font-size="16" font-weight="700" fill="#1e293b">原始文档</text>
+  <text x="170" y="396" text-anchor="middle" font-size="12" fill="#64748b">PDF / 网页 / 手册</text>
+  <line x1="256" y1="377" x2="482" y2="377" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowGray)"/>
+  <text x="369" y="362" text-anchor="middle" font-size="12" fill="#94a3b8">离线索引：切分 + 向量化入库</text>
+
+  <!-- ===== 最终回答（右下） ===== -->
+  <line x1="1060" y1="241" x2="1060" y2="333" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="970" y="340" width="180" height="75" rx="10" fill="#f0fdf4" stroke="#10b981" stroke-width="1.5"/>
+  <text x="1060" y="372" text-anchor="middle" font-size="16" font-weight="700" fill="#1e293b">最终回答</text>
+  <text x="1060" y="396" text-anchor="middle" font-size="12" fill="#64748b">返回给用户</text>
+</svg>
