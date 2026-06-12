@@ -1,0 +1,53 @@
+<svg width="1000" height="660" viewBox="0 0 1000 660" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Noto Sans SC Thin','Noto Sans SC',sans-serif; }
+    .title { font-size: 26px; font-weight: 700; fill: #1e293b; }
+    .h2 { font-size: 20px; font-weight: 700; fill: #1e293b; }
+    .sub { font-size: 14px; fill: #64748b; }
+    .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+    .flow { fill: none; stroke: #475569; stroke-width: 2.5; }
+  </style>
+
+  <!-- 背景 -->
+  <rect x="0" y="0" width="1000" height="660" fill="#f8fafc"/>
+
+  <!-- 标题 -->
+  <text class="title" x="500" y="48" text-anchor="middle">系统架构图</text>
+
+  <!-- API 网关 -->
+  <rect class="card" x="330" y="80" width="340" height="90" rx="12"/>
+  <rect x="330" y="80" width="340" height="8" rx="4" fill="#0ea5e9"/>
+  <text class="h2" x="500" y="124" text-anchor="middle">API 网关</text>
+  <text class="sub" x="500" y="152" text-anchor="middle">统一入口 / 路由转发</text>
+
+  <!-- 网关 -> 两个微服务（折线箭头） -->
+  <polyline class="flow" points="500,170 500,212 270,212 270,250" marker-end="url(#arrow)"/>
+  <polyline class="flow" points="500,170 500,212 730,212 730,250" marker-end="url(#arrow)"/>
+
+  <!-- 订单服务 -->
+  <rect class="card" x="120" y="255" width="300" height="110" rx="12"/>
+  <rect x="120" y="255" width="300" height="8" rx="4" fill="#10b981"/>
+  <text class="h2" x="270" y="305" text-anchor="middle">订单服务</text>
+  <text class="sub" x="270" y="335" text-anchor="middle">订单创建 / 状态管理</text>
+
+  <!-- 用户服务 -->
+  <rect class="card" x="580" y="255" width="300" height="110" rx="12"/>
+  <rect x="580" y="255" width="300" height="8" rx="4" fill="#8b5cf6"/>
+  <text class="h2" x="730" y="305" text-anchor="middle">用户服务</text>
+  <text class="sub" x="730" y="335" text-anchor="middle">注册登录 / 用户信息</text>
+
+  <!-- 微服务 -> 数据库（折线箭头） -->
+  <polyline class="flow" points="270,365 270,428 420,428 420,458" marker-end="url(#arrow)"/>
+  <polyline class="flow" points="730,365 730,428 580,428 580,458" marker-end="url(#arrow)"/>
+
+  <!-- MySQL 数据库（圆柱体） -->
+  <path d="M 330 488 v 92 a 170 24 0 0 0 340 0 v -92" fill="#fefce8" stroke="#f59e0b" stroke-width="2"/>
+  <ellipse cx="500" cy="488" rx="170" ry="24" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text class="h2" x="500" y="545" text-anchor="middle">MySQL 数据库</text>
+  <text class="sub" x="500" y="573" text-anchor="middle">订单表 / 用户表</text>
+</svg>
