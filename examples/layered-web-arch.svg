@@ -1,0 +1,90 @@
+<svg width="1000" height="650" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: 'Noto Sans SC Thin','Noto Sans SC',sans-serif; }
+    .title { font-size: 26px; font-weight: 700; fill: #1e293b; }
+    .lname { font-size: 20px; font-weight: 700; fill: #1e293b; }
+    .lsub  { font-size: 13px; fill: #64748b; }
+    .btitle { font-size: 15px; font-weight: 700; fill: #1e293b; }
+    .bsub   { font-size: 12px; fill: #64748b; }
+    .cap    { font-size: 13px; fill: #475569; }
+  </style>
+
+  <!-- 标题 -->
+  <text class="title" x="500" y="48" text-anchor="middle">前后端分离 Web 应用分层架构</text>
+
+  <!-- ===== 表现层 ===== -->
+  <rect x="80" y="80" width="840" height="140" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <text class="lname" x="115" y="145">表现层</text>
+  <text class="lsub" x="115" y="172">React 前端</text>
+
+  <rect x="288" y="105" width="144" height="90" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text class="btitle" x="360" y="144" text-anchor="middle">React 组件</text>
+  <text class="bsub" x="360" y="170" text-anchor="middle">页面 UI 渲染</text>
+
+  <rect x="444" y="105" width="144" height="90" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text class="btitle" x="516" y="144" text-anchor="middle">React Router</text>
+  <text class="bsub" x="516" y="170" text-anchor="middle">前端路由</text>
+
+  <rect x="600" y="105" width="144" height="90" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text class="btitle" x="672" y="144" text-anchor="middle">Redux</text>
+  <text class="bsub" x="672" y="170" text-anchor="middle">全局状态管理</text>
+
+  <rect x="756" y="105" width="144" height="90" rx="8" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text class="btitle" x="828" y="144" text-anchor="middle">Axios</text>
+  <text class="bsub" x="828" y="170" text-anchor="middle">HTTP 请求封装</text>
+
+  <!-- 表现层 -> 服务层 -->
+  <line x1="500" y1="222" x2="500" y2="270" stroke="#475569" stroke-width="2.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="525" y="230" width="205" height="32" rx="16" fill="#e2e8f0"/>
+  <text class="cap" x="627" y="251" text-anchor="middle">HTTP / RESTful JSON</text>
+
+  <!-- ===== 服务层 ===== -->
+  <rect x="80" y="275" width="840" height="140" rx="12" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+  <text class="lname" x="115" y="340">服务层</text>
+  <text class="lsub" x="115" y="367">Spring Boot API</text>
+
+  <rect x="288" y="300" width="144" height="90" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text class="btitle" x="360" y="339" text-anchor="middle">Controller 层</text>
+  <text class="bsub" x="360" y="365" text-anchor="middle">REST API 接口</text>
+
+  <rect x="444" y="300" width="144" height="90" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text class="btitle" x="516" y="339" text-anchor="middle">Service 层</text>
+  <text class="bsub" x="516" y="365" text-anchor="middle">业务逻辑处理</text>
+
+  <rect x="600" y="300" width="144" height="90" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text class="btitle" x="672" y="339" text-anchor="middle" font-size="14">Spring Security</text>
+  <text class="bsub" x="672" y="365" text-anchor="middle">认证与鉴权</text>
+
+  <rect x="756" y="300" width="144" height="90" rx="8" fill="#ffffff" stroke="#86efac" stroke-width="1.5"/>
+  <text class="btitle" x="828" y="339" text-anchor="middle">MyBatis / JPA</text>
+  <text class="bsub" x="828" y="365" text-anchor="middle">数据访问 ORM</text>
+
+  <!-- 服务层 -> 数据层（两条） -->
+  <line x1="435" y1="417" x2="435" y2="465" stroke="#475569" stroke-width="2.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="460" y="425" width="150" height="32" rx="16" fill="#e2e8f0"/>
+  <text class="cap" x="535" y="446" text-anchor="middle">JDBC / MyBatis</text>
+
+  <line x1="753" y1="417" x2="753" y2="465" stroke="#475569" stroke-width="2.5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <rect x="778" y="425" width="120" height="32" rx="16" fill="#e2e8f0"/>
+  <text class="cap" x="838" y="446" text-anchor="middle">缓存读写</text>
+
+  <!-- ===== 数据层 ===== -->
+  <rect x="80" y="470" width="840" height="140" rx="12" fill="#fefce8" stroke="#f59e0b" stroke-width="1.5"/>
+  <text class="lname" x="115" y="535">数据层</text>
+  <text class="lsub" x="115" y="562">MySQL + Redis</text>
+
+  <rect x="288" y="495" width="294" height="90" rx="8" fill="#ffffff" stroke="#fcd34d" stroke-width="1.5"/>
+  <text class="btitle" x="435" y="527" text-anchor="middle" font-size="16">MySQL 主库</text>
+  <text class="bsub" x="435" y="552" text-anchor="middle">业务数据持久化存储</text>
+  <text class="bsub" x="435" y="574" text-anchor="middle">主从复制 · 事务支持</text>
+
+  <rect x="606" y="495" width="294" height="90" rx="8" fill="#ffffff" stroke="#fcd34d" stroke-width="1.5"/>
+  <text class="btitle" x="753" y="527" text-anchor="middle" font-size="16">Redis 缓存</text>
+  <text class="bsub" x="753" y="552" text-anchor="middle">热点数据缓存 · 会话存储</text>
+  <text class="bsub" x="753" y="574" text-anchor="middle">分布式锁 · 消息队列</text>
+</svg>
